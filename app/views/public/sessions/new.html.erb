@@ -1,26 +1,30 @@
-<h2>Log in</h2>
+<div class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <section class="about-content">
+          <h4 class="my-5"><strong>ユーザーログイン</strong></h4>
+          <div class="col-md-12 mt-5">
+            <%= form_with model: @user, url: session_path(resource_name), local: true do |f| %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+              <!--メールアドレス-->
+              <div class="form-group row">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレス", class: "col-md-4 offset-md-4"  %>
+              </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+               <!--パスワード-->
+              <div class="form-group row">
+                <%= f.password_field :password, autocomplete: "current-password", :placeholder => "パスワード", class: "col-md-4 offset-md-4" %>
+              </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+              <div class="actions ml-3">
+                <%= f.submit "ログイン", class: "btn btn-action btn-primary col-md-3 mt-3"%>
+              </div>
+              <%= render "public/shared/links" %>
+            <% end %>
+          </div>
+        </section>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "public/shared/links" %>
+</div>
