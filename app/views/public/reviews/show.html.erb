@@ -1,2 +1,62 @@
-<h1>Public::Reviews#show</h1>
-<p>Find me in app/views/public/reviews/show.html.erb</p>
+<div class="row">
+  <div>
+    <%= image_tag @review.image %></br><!--400x400にしたい-->
+    <th><strong>レビュー投稿者：</strong></th>
+    <th><strong><%= @review.user.nick_name %></strong></th>
+  </div>
+  <div class="col-md-7 mt-5">
+    <!--レビュー題名-->
+    <div class="form-group row">
+      <td><%= @review.title %></td>
+    </div>
+
+    <!--商品名-->
+    <div class="form-group row">
+      <label><strong>商品名:</strong></label>
+      <td><%= @review.item_name %></td>
+    </div>
+
+    <!--ジャンル-->
+    <div class="form-group row">
+      <label><strong>ジャンル:</strong></label>
+      <td><%#= @review.genre.name %></td>
+    </div>
+
+    <!--メーカー名-->
+    <div class="form-group row">
+      <label><strong>メーカー名:</strong></label>
+      <td><%= @review.manufacture_name %></td>
+    </div>
+
+    <!--購入価格-->
+    <div class="form-group row">
+      <label><strong>購入価格:</strong></label>
+      <td>￥<%= @review.purchase_price.to_s(:delimited) %></td>
+    </div>
+
+    <!--購入場所-->
+    <div class="form-group row">
+      <label><strong>購入場所:</strong></label>
+      <td><%= @review.purchase_source %></td>
+    </div>
+
+    <!--レビュー文-->
+    <div class="form-group row">
+      <label><strong>レビュー:</strong></label>
+      <td><%= @review.impressions %></td>
+    </div>
+
+    <!--コメント欄-->
+    <div class="form-group row">
+      <label><strong>コメント欄:</strong></label>
+    </div>
+
+    <% if @review.user == current_user %>
+      <div class="text-center">
+        <%= link_to '編集する', edit_public_review_path(@review.id), class: "button col-md-4 mt-3" %>
+        <%= link_to '削除する', public_review_path(@review), method: :delete, "data-confirm" => "本当に削除しますか？" , class: "button-danger col-md-4 ml-2" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

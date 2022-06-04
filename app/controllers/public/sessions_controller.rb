@@ -18,7 +18,18 @@ class Public::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # protected
+  protected
+
+  def reject_user
+    #ログイン時に入力された名前に対応するユーザーが存在するかサーチ
+    @user = User.find_by(email: params[:user][:email])
+    if @user
+      #入力されたパスワードが正しいこと      ＠userのactive_for_authentication?メソッドがtrueであるかどうか
+      if @user.valid_password?(params[:user][:password]) && (@user.is_active == true)
+        redirect_to new_user_registration
+      end
+    end
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

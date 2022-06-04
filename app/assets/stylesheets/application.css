@@ -13,3 +13,62 @@
  *= require_tree .
  *= require_self
  */
+header {
+  height: auto;
+  width: 80%;
+  margin: 0 10%;
+}
+
+main {
+  height: auto;
+  width: 80%;
+  margin: 0 10%;
+}
+
+.footer {
+  height: 100px;
+  color: #00fa9a;
+  background-color: #1a1a1a;
+  text-align: center;
+  padding-top: 35px;
+}
+
+.button {
+  display       : inline-block;
+  border-radius : 1vh;          /* 角丸       */
+  padding       : 12px 26px;   /* 余白       */
+  background    : #1a1a1a;     /* 背景色     */
+  color         : #00fa9a;     /* 文字色     */
+  line-height   : 10px;         /* 1行の高さ  */
+  transition    : .2s;         /* なめらか変化 */
+  border        : 2px solid #1a1a1a;    /* 枠の指定 */
+}
+.button:hover {
+  border: 2px solid #00fa9a;
+  color         : #1a1a1a;     /* 背景色     */
+  background    : #00fa9a;     /* 文字色     */
+}
+
+.button-danger {
+  display       : inline-block;
+  border-radius : 1vh;          /* 角丸       */
+  padding       : 12px 26px;   /* 余白       */
+  background    : #1a1a1a;     /* 背景色     */
+  color         : #ff0000;     /* 文字色     */
+  line-height   : 10px;         /* 1行の高さ  */
+  transition    : .2s;         /* なめらか変化 */
+  border        : 2px solid #1a1a1a;    /* 枠の指定 */
+}
+.button-danger:hover {
+  border: 2px solid #ff0000;
+  color         : #1a1a1a;     /* 背景色     */
+  background    : #ff0000;     /* 文字色     */
+}
+
+.border {
+  border: none;
+  width: 100%;
+  margin: 0 auto;
+  height: 10px;
+  background: transparent linear-gradient(90deg, #00fa9a 0%, #1a1a1a 80%) 0% 0% no-repeat padding-box;
+}
