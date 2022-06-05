@@ -1,9 +1,5 @@
+<h4 class="col-md-6"><span>レビュー編集</span></h4>
 <div class="container">
-  <div class="row">
-    <div class="col-md-8 mt-2">
-      <h4 class="col-md-6"><span>レビューする</span></h4>
-    </div>
-  </div>
   <div class="row">
     <div class="col-md-4"></div>
     <div class='col-md-8 mt-3'>
@@ -29,8 +25,8 @@
 
         <!--ジャンル-->
         <div class="form-group row">
-          <%#= f.label :genre_id, "ジャンル:", class: "col-md-3 col-form-label" %>
-          <%#= f.collection_select :genre_id, Genre.all, :id, :name, class: "col-md-6 mt-1" %>
+          <%= f.label :genre_id, "ジャンル:", class: "col-md-3 col-form-label" %>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name, class: "col-md-6 mt-1" %>
         </div>
 
         <!--メーカー名-->
@@ -51,15 +47,15 @@
           <%= f.text_field :purchase_source, :placeholder => "購入場所", class: "col-md-6 mt-1" %>
         </div>
 
-        <!--商品説明-->
+        <!--レビュー文-->
         <div class="form-group row">
           <%= f.label :impressions, "レビュー文:", class: "col-md-3 col-form-label" %>
           <%= f.text_area :impressions, :placeholder => "ここにレビュー文を記述します", size: "20x7", class: "col-md-9 mt-1" %>
         </div>
 
-        <!--新規登録ボタン-->
+        <!--編集保存ボタン-->
         <div class="action ml-3">
-          <%= f.submit "編集を保存", class: "button col-md-3 offset-md-2 mt-5 mb-5" %>
+          <%= f.submit "編集を保存", class: "button col-md-5 offset-md-2" %>
         </div>
       <% end %>
     </div>

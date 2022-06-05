@@ -16,7 +16,7 @@
       <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white mb-2">
         <h5 class="my-0 mr-md-auto font-italic">
           <%= link_to root_path do %>
-            <div class="text-dark">Device_Log</div>
+            <%= image_tag 'logo.png', class: "initialized"%>
           <% end %>
         </h5>
         <nav class="my-2 my-md-0 mr-md-3">
@@ -46,12 +46,12 @@
           <%#= link_to admin_customers_path do%>
             <div class="button mr-4">ユーザー一覧</div>
           <%# end %>
-          <%#= link_to admin_genres_path do%>
+          <%= link_to admin_genres_path do%>
             <div class="button mr-4">ジャンル一覧</div>
-          <%# end %>
-          <%#= link_to destroy_admin_session_path, method: :delete do%>
+          <% end %>
+          <%= link_to destroy_admin_session_path, method: :delete do%>
             <div class="button mr-4">ログアウト</div>
-          <%# end %>
+          <% end %>
         <% else %>
           <%= link_to new_user_registration_path do%>
             <div class="button mr-4">新規登録</div>
@@ -59,12 +59,15 @@
           <%= link_to new_user_session_path do%>
             <div class="button mr-4">ログイン</div>
           <% end %>
+          <%= link_to admin_genres_path do%>
+            <div class="button mr-4">ジャンル一覧</div>
+          <% end %>
           <%#= link_to new_customer_session_path do%>
             <div class="button mr-4">ゲストログイン</div>
           <%# end %>
         <% end %>
       </div>
-      <div class="border"></div>
+      <div class="main-border"></div>
     </header>
     <main>
       <%= yield %>

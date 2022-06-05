@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
 header {
   height: auto;
   width: 80%;
@@ -23,14 +30,15 @@ main {
   height: auto;
   width: 80%;
   margin: 0 10%;
+  flex: 1;
 }
 
 .footer {
-  height: 100px;
+  height: 110px;
   color: #00fa9a;
   background-color: #1a1a1a;
   text-align: center;
-  padding-top: 35px;
+  padding-top: 45px;
 }
 
 .button {
@@ -65,10 +73,47 @@ main {
   background    : #ff0000;     /* 文字色     */
 }
 
-.border {
+.button-edit {
+  display       : inline-block;
+  border-radius : 1vh;          /* 角丸       */
+  padding       : 12px 26px;   /* 余白       */
+  background    : #a9a9a9;     /* 背景色     */
+  color         : #00fa9a;     /* 文字色     */
+  line-height   : 10px;         /* 1行の高さ  */
+  transition    : .2s;         /* なめらか変化 */
+  border        : 2px solid #a9a9a9;    /* 枠の指定 */
+}
+.button-edit:hover {
+  border: 2px solid #00fa9a;
+  color         : #a9a9a9;     /* 背景色     */
+  background    : #00fa9a;     /* 文字色     */
+}
+
+.main-border {
   border: none;
   width: 100%;
   margin: 0 auto;
-  height: 10px;
+  height: 7px;
   background: transparent linear-gradient(90deg, #00fa9a 0%, #1a1a1a 80%) 0% 0% no-repeat padding-box;
+}
+
+.border{
+  border: 2px solid #00fa9a;
+}
+
+img {
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+}
+
+.item_image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.initialized {
+  width: initial;
+  height: initial;
 }

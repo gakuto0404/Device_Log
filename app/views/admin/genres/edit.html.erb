@@ -1,2 +1,13 @@
-<h1>Admin::Genres#edit</h1>
-<p>Find me in app/views/admin/genres/edit.html.erb</p>
+<h4 class="col-md-6 mt-3"><span>ジャンル編集</span></h4>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-5">
+      <%= form_with model: @genre, url: admin_genre_path(@genre) do |f| %>
+        <tr>
+          <th class="col-md-6"><%= f.text_field :name, class: "col-md-5" %></th>
+          <th class="col-md-3"><%= f.submit '保存を変更', class: "button offset-md-2 col-md-4" %></th>
+        </tr>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,11 @@
     <div class="row">
       <div class="col">
         <section class="about-content">
+          <div class="my-5">
+            <%= link_to root_path do %>
+              <%= image_tag 'logo.png', class: "initialized"%>
+            <% end %>
+          </div>
           <h4 class="my-5"><strong>ユーザーログイン</strong></h4>
           <div class="col-md-12 mt-5">
             <%= form_with model: @user, url: session_path(resource_name), local: true do |f| %>
@@ -14,11 +19,11 @@
 
                <!--パスワード-->
               <div class="form-group row">
-                <%= f.password_field :password, autocomplete: "current-password", :placeholder => "パスワード", class: "col-md-4 offset-md-4" %>
+                <%= f.password_field :password, autocomplete: "current-password", :placeholder => "パスワード", class: "col-md-4 offset-md-4 mt-3 mb-4" %>
               </div>
 
               <div class="actions ml-3">
-                <%= f.submit "ログイン", class: "button col-md-3 mt-3"%>
+                <%= f.submit "ログイン", class: "button col-md-3 mt-3 mb-5"%>
               </div>
               <%= render "public/shared/links" %>
             <% end %>

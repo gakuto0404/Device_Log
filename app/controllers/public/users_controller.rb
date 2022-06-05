@@ -1,14 +1,15 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
-  
+
   def show
-    @user = current_user
+    @user = User.find(params[:id])
+    @reviews = @user.reviews
   end
 
   def edit
     @user = current_user
   end
-  
+
   def update
      @user = current_user
     if @user.update(user_params)
@@ -21,14 +22,14 @@ class Public::UsersController < ApplicationController
   def quit
     @user = current_user
   end
-  
+
   def withdrawal
     @user = current_user
     @user.update(is_active: false)
     reset_session
     redirect_to root_path
   end
-  
+
   private
 
   def user_params

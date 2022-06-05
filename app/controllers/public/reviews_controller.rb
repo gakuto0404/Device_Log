@@ -3,7 +3,7 @@ class Public::ReviewsController < ApplicationController
 
   def index
     @genres = Genre.all
-    @review = Review.all
+    @reviews = Review.all
   end
 
   def new
@@ -21,6 +21,7 @@ class Public::ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+    @user = @review.user
   end
 
   def edit
@@ -44,7 +45,6 @@ class Public::ReviewsController < ApplicationController
 
   private
     def review_params
-      params.require(:review).permit(:image, :title, :item_name, :manufacture_name, :impressions, :purchase_price, :purchase_source)
+      params.require(:review).permit(:image, :title, :item_name, :genre_id, :manufacture_name, :impressions, :purchase_price, :purchase_source)
     end
 end
-#, :genre_id 入れる↑
