@@ -21,49 +21,49 @@
         </h5>
         <nav class="my-2 my-md-0 mr-md-3">
           <% if user_signed_in? %>
-            <ul class="nav col-lg-auto my-2  my-md-0">
+            <ul class="nav col-lg-auto my-2">
               <li class="welcome">ようこそ、<%= current_user.nick_name %>さん！</li>
             </ul>
           <% end %>
         </nav>
         <% if user_signed_in? %>
           <%= link_to public_user_path(current_user.id) do%>
-            <div class="button mr-4">マイページ</div>
+            <div class="button mr-2 ml-2">マイページ</div>
           <% end %>
           <%= link_to new_public_reviews_path do%>
-            <div class="button mr-4">レビューする</div>
+            <div class="button mr-2 ml-2">レビューする</div>
           <% end %>
           <%= link_to public_reviews_path do%>
-            <div class="button mr-4">レビュー一覧</div>
+            <div class="button mr-2 ml-2">レビュー一覧</div>
           <% end %>
           <%= link_to destroy_user_session_path, method: :delete do%>
-            <div class="button mr-4">ログアウト</div>
+            <div class="button mr-2 ml-2">ログアウト</div>
           <% end %>
         <% elsif admin_signed_in? %>
           <%#= link_to admin_items_path do %>
-            <div class="button mr-4">レビュー一覧</div>
+            <div class="button mr-2 ml-2">レビュー一覧</div>
           <%# end %>
           <%#= link_to admin_customers_path do%>
-            <div class="button mr-4">ユーザー一覧</div>
+            <div class="button mr-2 ml-2">ユーザー一覧</div>
           <%# end %>
           <%= link_to admin_genres_path do%>
-            <div class="button mr-4">ジャンル一覧</div>
+            <div class="button mr-2 ml-2">ジャンル一覧</div>
           <% end %>
           <%= link_to destroy_admin_session_path, method: :delete do%>
-            <div class="button mr-4">ログアウト</div>
+            <div class="button mr-2 ml-2">ログアウト</div>
           <% end %>
         <% else %>
           <%= link_to new_user_registration_path do%>
-            <div class="button mr-4">新規登録</div>
+            <div class="button mr-2 ml-2">新規登録</div>
           <% end %>
           <%= link_to new_user_session_path do%>
-            <div class="button mr-4">ログイン</div>
+            <div class="button mr-2 ml-2">ログイン</div>
           <% end %>
           <%= link_to admin_genres_path do%>
-            <div class="button mr-4">ジャンル一覧</div>
+            <div class="button mr-2 ml-2">ジャンル一覧</div>
           <% end %>
           <%#= link_to new_customer_session_path do%>
-            <div class="button mr-4">ゲストログイン</div>
+            <div class="button mr-2 ml-2">ゲストログイン</div>
           <%# end %>
         <% end %>
       </div>

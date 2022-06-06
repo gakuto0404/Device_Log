@@ -85,8 +85,8 @@ main {
 }
 .button-edit:hover {
   border: 2px solid #00fa9a;
-  color         : #a9a9a9;     /* 背景色     */
-  background    : #00fa9a;     /* 文字色     */
+  color         : #a9a9a9;     /* 文字色     */
+  background    : #00fa9a;     /* 背景色     */
 }
 
 .main-border {
@@ -119,7 +119,25 @@ main {
   object-fit: cover;
 }
 
+.user_image {           /*user_profile_imageで使うサイズ*/
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
 .initialized {
   width: initial;
   height: initial;
+}
+
+.profile {
+  display       : inline-block;
+  border-radius : 1vh;          /* 角丸       */
+  padding       : 12px 26px;   /* 余白       */
+  background    : #a9a9a9;     /* 背景色     */
+  color         : #1a1a1a;     /* 文字色     */
+  line-height   : 10px;         /* 1行の高さ  */
+  transition    : .2s;         /* なめらか変化 */
+  border        : 2px solid #a9a9a9;    /* 枠の指定 */
 }
