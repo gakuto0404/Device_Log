@@ -22,8 +22,8 @@ body {
 
 header {
   height: auto;
-  width: 80%;
-  margin: 0 10%;
+  width: 90%;
+  margin: 0 5%;
 }
 
 main {
@@ -101,15 +101,21 @@ main {
   border: 2px solid #00fa9a;
 }
 
-img {
+.item_img {             /*indexで使うサイズ*/
   width: 175px;
   height: 175px;
   object-fit: cover;
 }
 
-.item_image {
+.show_item_image {      /*showで使うサイズ*/
   width: 400px;
   height: 400px;
+  object-fit: cover;
+}
+
+.user_item_image {      /*user/showで使うサイズ*/
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 }
 

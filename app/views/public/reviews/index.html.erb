@@ -11,7 +11,7 @@
       <% @reviews.each do |review| %>
         <div class="d-flex flex-column flex-md-row align-items-center my-3">
           <%= link_to public_review_path(review.id) do %>
-            <%= image_tag review.image %>
+            <%= image_tag review.image, class: "item_img" %>
           <% end %>
           <div class="col-md-10">
             <h3>
