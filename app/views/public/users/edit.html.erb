@@ -1,14 +1,16 @@
 <h4 class="col-md-6"><span>ユーザー情報の編集</span></h4>
 <div class="container">
   <div class="row">
-    <div class="col-md-4"><!--プレビュー--></div>
+    <div class="col-md-4">
+      <!--プレビュー-->
+    </div>
     <div class='col-md-8 mt-3'>
       <%= form_with model: @user, url: public_user_path(@user), local: true do |f| %>
 
         <!--プロフィール画像-->
         <div class="form-group row my-4">
-          <%= f.label :image, "プロフィール画像", class: "col-md-4 offset-md-1 col-form-label" %>
-          <%= f.file_field :image, accept: "image/*", class: "col-md-5" %>
+          <%= f.label :profile_image, "プロフィール画像", class: "col-md-4 offset-md-1 col-form-label" %>
+          <%= f.file_field :profile_image, accept: "image/*", class: "col-md-5" %>
         </div>
 
         <!--ニックネーム-->

@@ -24,6 +24,10 @@
             <ul class="nav col-lg-auto my-2">
               <li class="welcome">ようこそ、<%= current_user.nick_name %>さん！</li>
             </ul>
+          <% elsif admin_signed_in? %>
+            <ul class="nav col-lg-auto my-2">
+              <li class="welcome">管理者ログイン中</li>
+            </ul>
           <% end %>
         </nav>
         <% if user_signed_in? %>
@@ -59,8 +63,8 @@
           <%= link_to new_user_session_path do%>
             <div class="button mr-2 ml-2">ログイン</div>
           <% end %>
-          <%= link_to admin_genres_path do%><!--これいらない-->
-            <div class="button mr-2 ml-2">ジャンル一覧</div>
+          <%= link_to new_admin_session_path do%><!--これいらない-->
+            <div class="button mr-2 ml-2">管理者ログイン</div>
           <% end %>
           <%#= link_to new_customer_session_path do%>
             <div class="button mr-2 ml-2">ゲストログイン</div>

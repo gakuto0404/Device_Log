@@ -1,2 +1,46 @@
-<h1>Admin::Users#show</h1>
-<p>Find me in app/views/admin/users/show.html.erb</p>
+<div class="row">
+  <div class="profile mt-4">
+    <%= image_tag @user.get_profile_image(200,200), class: "user_image" %>
+    <h4 class="my-3">
+      ニックネーム：<%= @user.nick_name %></br>
+      氏名：<%= @user.last_name %><%= @user.first_name %></br>
+      メールアドレス：</br><%= @user.email %></br>
+    </h4>
+    <%= link_to '編集する', edit_admin_user_path(@user.id), class: "button mt-3" %>
+  </div>
+  <div class="col-md-8 ml-3 mr-3">
+    <h4 class="mt-3">
+      <%= @user.nick_name %>のレビュー
+    </h4>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <% @reviews.each do |review| %>
+            <div class="d-flex flex-column flex-md-row align-items-center my-3">
+              <%= link_to admin_review_path(review.id) do %>
+                <%= image_tag review.image, class: "user_item_image" %>
+              <% end %>
+              <div class="col-md-10">
+                <h5>
+                  <div>
+                    <%= link_to admin_review_path(review.id), class: "mr-5" do %>
+                      <%= review.item_name %>
+                    <% end %>
+                    <div class="text-right">
+                      <%= review.genre.name %>
+                    </div>
+                  </div>
+                    <%= review.title %>
+                  <div class="text-right">
+                    購入価格￥<%= review.purchase_price.to_s(:delimited) %>
+                  </div>
+                </h5>
+              </div>
+            </div>
+            <div class="border"></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

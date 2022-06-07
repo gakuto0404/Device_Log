@@ -1,6 +1,4 @@
 class Admin::ReviewsController < ApplicationController
-
-
   def index
     @genres = Genre.all
     @reviews = Review.all

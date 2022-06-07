@@ -1,9 +1,11 @@
 <h4 class="col-md-6"><span>ユーザー情報の編集</span></h4>
 <div class="container">
   <div class="row">
-    <div class="col-md-4"><!--プレビュー--></div>
+    <div class="col-md-4">
+      <!--プレビュー-->
+    </div>
     <div class='col-md-8 mt-3'>
-      <%= form_with model: @user, url: public_user_path(@user), local: true do |f| %>
+      <%= form_with model: @user, url: admin_user_path(@user), local: true do |f| %>
 
       　<!--会員ID-->
         <div class="form-group row">
@@ -13,8 +15,8 @@
 
         <!--プロフィール画像-->
         <div class="form-group row my-4">
-          <%= f.label :image, "プロフィール画像", class: "col-md-4 offset-md-1 col-form-label" %>
-          <%= f.file_field :image, accept: "image/*", class: "col-md-5" %>
+          <%= f.label :profile_image, "プロフィール画像", class: "col-md-4 offset-md-1 col-form-label" %>
+          <%= f.file_field :profile_image, accept: "image/*", class: "col-md-5" %>
         </div>
 
         <!--ニックネーム-->
@@ -36,7 +38,18 @@
           <%= f.email_field :email, class: "col-md-5" %>
         </div>
 
-        <!--保存退会ボタン-->
+        <!--会員ステータス-->
+        <div class="form-group row my-4">
+          <%= f.label "会員ステータス", class: "col-md-4 offset-md-1 col-form-label" %>
+          <div class="text-center mt-2">
+            <%= f.radio_button :is_active, :true %>
+            <font color=#00fa9a><%= f.label :is_active, "有効" %></font>
+            <%= f.radio_button :is_active, :false %>
+            <font color=#ff0000><%= f.label :is_active, "無効" %></font>
+          </div>
+        </div>
+
+        <!--編集を保存ボタン-->
         <div class="text-center">
           <%= f.submit "編集を保存する", class: "button col-md-3 mt-5 ml-3" %>
         </div>

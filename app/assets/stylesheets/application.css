@@ -126,6 +126,14 @@ main {
   object-fit: cover;
 }
 
+.admin_image {           /*admin_profile_imageで使うサイズ*/
+  border: 2px solid #00fa9a;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
 .initialized {
   width: initial;
   height: initial;

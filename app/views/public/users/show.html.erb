@@ -3,11 +3,13 @@
     <%= image_tag @user.get_profile_image(200,200), class: "user_image" %>
     <h4 class="my-3">
       ニックネーム：<%= @user.nick_name %></br>
-    <% if current_user %>
+    <% if @user == current_user %>
       氏名：<%= @user.last_name %><%= @user.first_name %></br>
       メールアドレス：</br><%= @user.email %></br>
     </h4>
       <%= link_to '編集する', edit_public_user_path(@user.id), class: "button mt-3" %>
+    <% else %>
+      <!--出来たらフォロー機能実装-->
     <% end %>
   </div>
   <div class="col-md-8 ml-3 mr-3">
