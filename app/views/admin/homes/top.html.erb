@@ -1,26 +1,27 @@
 <h4 class="col-md-6"><span>ユーザー一覧</span></h4>
-<div class="row">
-  <div class='col-md-12 mt-3'>
-    <% @users.each do |user| %>
-      <div class="col-md-4 mt-3">
+<div class='col-md-12 mt-3'>
+  <div class=" text-center row">
+  <% @users.each do |user| %>
+    <div class="col-md-4 my-3">
+      <div class="profile">
         <%= link_to admin_user_path(user) do %>
           <%= image_tag user.profile_image, class: "admin_image" %>
         <% end %>
         <h5>
-          <div>
-            <%= link_to admin_user_path(user) do %>
-              <%= user.last_name %><%= user.first_name %>
-            <% end %>
-            User ID:<%= user.id %>
-            <%= user.email %>
-            <% if user.is_active == true %>  <!-- if文での会員ステータス表示 -->
-              <td><font color=#00fa9a><strong>有効</strong></font></td>
-            <% else %>
-              <td><font color=#c0c0c0><strong>退会</strong></font></td>
-            <% end %>
-          </div>
+          <%= link_to admin_user_path(user) do %>
+            <%= user.last_name %><%= user.first_name %>
+          <% end %>
+          User ID:<%= user.id %></br>
+          <%= user.email %></br>
+          <div class="text-right"
+          <% if user.is_active == true %>  <!-- if文での会員ステータス表示 -->
+            <td><font color=#00fa9a><strong>有効</strong></font></td>
+          <% else %>
+            <td><font color=#c0c0c0><strong>退会</strong></font></td>
+          <% end %>
         </h5>
       </div>
-    <% end %>
+    </div>
+  <% end %>
   </div>
 </div>

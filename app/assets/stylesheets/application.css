@@ -147,5 +147,5 @@ main {
   color         : #1a1a1a;     /* 文字色     */
   line-height   : 10px;         /* 1行の高さ  */
   transition    : .2s;         /* なめらか変化 */
-  border        : 2px solid #a9a9a9;    /* 枠の指定 */
+  border        : 2px solid #696969;    /* 枠の指定 */
 }
