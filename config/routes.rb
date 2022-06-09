@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :show, :edit, :update, :destroy]
   end
   namespace :admin do
+    resources :reviews_comment, only: [:destroy]
+  end
+  namespace :admin do
     get 'homes/top'
   end
 
@@ -42,9 +45,10 @@ Rails.application.routes.draw do
   delete 'reviews/:id' => 'public/reviews#destroy'
   get 'reviews/:id' => 'public/reviews#show'
 
-  namespace :public do
-    resources :reviews_comment, only: [:create, :destroy]
-  end
+  post 'reviews/:review_id/reviews_comment' => 'public/reviews_comment#create', as: 'reviews_comment'
+  delete 'reviews_comment/:id' => 'public/reviews_comment#destroy', as: 'comment_delete'
+
+
   root to: 'public/homes#top'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
