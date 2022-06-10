@@ -1,15 +1,15 @@
 class Public::ReviewsCommentController < ApplicationController
 
   def create
-    @review = Review.find(params[:review_id])
-    comment = current_user.reviews_comment.new(review_comment_params)
-    comment.review_id = review.id
-    comment.save
+    review = Review.find(params[:review_id])
+    review_comments = current_user.review_comments.new(review_comment_params)
+    review_comments.review_id = review.id
+    review_comments.save
     redirect_to public_review_path(review)
   end
 
   def destroy
-    Review.find(params[:id]).destroy
+    ReviewComment.find(params[:id]).destroy
     redirect_to public_review_path(params[:review_id])
   end
 

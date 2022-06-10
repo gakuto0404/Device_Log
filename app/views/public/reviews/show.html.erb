@@ -54,16 +54,16 @@
         <div>
           <p>コメント件数：<%= @review.review_comments.count %></p>
           <% @review.review_comments.each do |review_comment| %>
-            <p><%= image_tag review_comment.user.get_profile_image(100,100) %></p>
+            <p><%= image_tag review_comment.user.get_profile_image(400,400), class: "user_item_image" %></p>
             <%= review_comment.user.nick_name %>
             <%= review_comment.created_at.strftime('%Y/%m/%d') %><%= review_comment.comment %>
-            <% if review_comment == current_user %>
-              <%= link_to "削除", admin_reviews_comment_path(review_comment.review_image, review_comment), method: :delete %>
+            <% if @review_comment.user == current_user %>
+              <%= link_to "削除", public_review_reviews_comment_path(review_comment.review, review_comment), method: :delete %>
             <% end %>
           <% end %>
         </div>
         <div>
-          <%= form_with model:[@review, @review_comment], url: reviews_comment_path do |f| %>
+          <%= form_with model:[@review, @review_comment], url: public_review_reviews_comment_index_path(@review.id) do |f| %>
             <%= f.text_area :comment, :size=>"60x3",placeholder: "コメントする" %>
             <%= f.submit "送信する", class: "btn btn-success mb-4" %>
           <% end %>

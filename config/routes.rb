@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :show, :edit, :update, :destroy]
   end
   namespace :admin do
-    resources :reviews_comment, only: [:destroy]
+    resources :reviews do  #postsコントローラへのルーティング
+      resources :reviews_comment, only: [:destroy]  #commentsコントローラへのルーティング
+    end
   end
   namespace :admin do
     get 'homes/top'
@@ -45,8 +47,15 @@ Rails.application.routes.draw do
   delete 'reviews/:id' => 'public/reviews#destroy'
   get 'reviews/:id' => 'public/reviews#show'
 
-  post 'reviews/:review_id/reviews_comment' => 'public/reviews_comment#create', as: 'reviews_comment'
-  delete 'reviews_comment/:id' => 'public/reviews_comment#destroy', as: 'comment_delete'
+  #post 'reviews/:review_id/reviews_comment' => 'public/reviews_comment#create', as: 'reviews_comment'
+  #delete 'reviews_comment/:id' => 'public/reviews_comment#destroy', as: 'comment_delete'
+
+  namespace :public do
+    resources :reviews do  #postsコントローラへのルーティング
+      resources :reviews_comment, only: [:create, :destroy]  #commentsコントローラへのルーティング
+    end
+  end
+
 
 
   root to: 'public/homes#top'
