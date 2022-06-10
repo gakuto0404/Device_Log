@@ -119,6 +119,14 @@ main {
   object-fit: cover;
 }
 
+.comment_user_image {      /*review/showで使うサイズ*/
+  border: 2px solid #00fa9a;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+}
+
 .user_image {           /*user_profile_imageで使うサイズ*/
   border-radius: 50%;
   width: 300px;
@@ -148,4 +156,23 @@ main {
   line-height   : 10px;         /* 1行の高さ  */
   transition    : .2s;         /* なめらか変化 */
   border        : 2px solid #696969;    /* 枠の指定 */
+}
+
+.comment {
+  display       : inline-block;
+  border-radius : 1vh;          /* 角丸       */
+  padding       : 12px 26px;   /* 余白       */
+  background    : #f5f5f5;     /* 背景色     */
+  color         : #1a1a1a;     /* 文字色     */
+  line-height   : 10px;         /* 1行の高さ  */
+  transition    : .2s;         /* なめらか変化 */
+  border        : 2px solid #696969;    /* 枠の指定 */
+}
+
+.trash {
+  color: #a9a9a9;
+}
+
+.user_size {
+  width: 125px;
 }
