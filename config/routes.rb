@@ -56,7 +56,9 @@ Rails.application.routes.draw do
     end
   end
 
-
+  resources :reviews do
+    get :search, on: :collection
+  end
 
   root to: 'public/homes#top'
 

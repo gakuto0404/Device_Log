@@ -159,9 +159,12 @@ main {
 }
 
 .comment {
+  line-height: initial !important;
+  overflow-wrap: break-word;
+  width: 100%;
   display       : inline-block;
   border-radius : 1vh;          /* 角丸       */
-  padding       : 12px 26px;   /* 余白       */
+  padding       : 10px 10px;   /* 余白       */
   background    : #f5f5f5;     /* 背景色     */
   color         : #1a1a1a;     /* 文字色     */
   line-height   : 10px;         /* 1行の高さ  */
@@ -173,6 +176,20 @@ main {
   color: #a9a9a9;
 }
 
-.user_size {
-  width: 125px;
+.top-image {
+  border: 2px solid #00fa9a;
+  width:275px;
+  height: 275px;
+  object-fit: cover;
+}
+
+.new-img {
+  border: 2px solid #00fa9a;
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.preview {
+  width: 350px;
 }

@@ -1,8 +1,8 @@
 <h4 class="col-md-6"><span>ユーザー情報の編集</span></h4>
 <div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <!--プレビュー-->
+  <div class="row justify-content-center">
+    <div class="preview">
+      <div id="new-image"></div>
     </div>
     <div class='col-md-8 mt-3'>
       <%= form_with model: @user, url: public_user_path(@user), local: true do |f| %>
@@ -34,8 +34,8 @@
 
         <!--保存退会ボタン-->
         <div class="text-center">
-          <%= f.submit "編集を保存する", class: "button col-md-3 mt-5 ml-3" %>
-          <%= link_to "退会する", public_users_quit_path(@user), class: "button-danger col-md-3 mt-5 ml-3" %>
+          <%= f.submit "編集を保存する", class: "button col-md-3 my-3 ml-3 mr-3" %>
+          <%= link_to "退会する", public_users_quit_path(@user), class: "button-danger col-md-3 my-3 ml-3 mr-3" %>
         </div>
       <% end %>
     </div>
