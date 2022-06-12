@@ -193,3 +193,51 @@ main {
 .preview {
   width: 350px;
 }
+
+/******************検索フォームデザイン********************/
+.search {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 25px;
+}
+
+.search input[type=text] {
+	width: 40%;
+	font-size: 20px;
+	color: #474747;
+	border: 2px solid #474747;
+	border-radius: 3px 0 0 3px;
+	outline: none;
+}
+
+.search button[type=submit] {
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #FFF;
+	background: #474747;
+	border: 2px solid #474747;
+	border-radius: 0 3px 3px 0;
+	cursor: pointer;
+}
+
+.limegreen input[type=text] {
+	border-color: #00fa9a;
+}
+
+.limegreen button[type=submit] {
+	border-color: #00fa9a;
+	background: #00fa9a;
+}
+
+/**********************************************************/
+
+.reload {
+  font-size:1.5em;
+  color: #00fa9a;
+  padding-top: 11px;
+  padding-right: 10px;
+}

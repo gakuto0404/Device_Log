@@ -3,7 +3,9 @@ class Public::ReviewsController < ApplicationController
 
   def index
     @genres = Genre.all
-    @reviews = Review.all
+    #@reviews = Review.all
+    @search_params = review_search_params
+    @reviews = Review.search(@search_params).includes(:genre)
   end
 
   def new
@@ -47,5 +49,9 @@ class Public::ReviewsController < ApplicationController
   private
   def review_params
     params.require(:review).permit(:image, :title, :item_name, :genre_id, :manufacture_name, :impressions, :purchase_price, :purchase_source)
+  end
+
+  def review_search_params
+    params.fetch(:search, {}).permit(:item_name, {:genre_ids => []})
   end
 end
