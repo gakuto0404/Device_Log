@@ -7,6 +7,11 @@
       メールアドレス：</br><%= @user.email %></br>
     </h4>
     <%= link_to '編集する', edit_admin_user_path(@user.id), class: "button mt-3" %>
+    <% if @user.is_active == true %>  <!-- if文での会員ステータス表示 -->
+      <td><font color=#00fa9a><strong>有効</strong></font></td>
+    <% else %>
+      <td><font color=#5f5f5f><strong>退会</strong></font></td>
+    <% end %>
   </div>
   <div class="col-md-8 ml-3 mr-3">
     <h4 class="mt-3">

@@ -9,6 +9,11 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_one_attached :profile_image
 
+  # is_activeがtrueならfalseを返すようにしている
+  def active_for_authentication?
+    super && (is_active == true)
+  end
+
   def get_profile_image(width, height)
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no-user-image.jpeg')
