@@ -9,6 +9,12 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_one_attached :profile_image
 
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
   # is_activeがtrueならfalseを返すようにしている
   def active_for_authentication?
     super && (is_active == true)

@@ -20,6 +20,14 @@
             <%= image_tag 'logo.png', class: "initialized"%>
           <% end %>
         </h5>
+        <div><!----------------フラッシュメッセージ----------------->
+          <% flash.each do |name, msg| %>
+            <div class="alert alert-<%= name %>" role="alert" id="alert">
+              <a href="#" class="close" data-dismiss="alert">×</a>
+              <%= msg %>
+            </div>
+          <% end %>
+        </div><!----------------------------------------------------->
         <nav class="my-2 my-md-0 mr-md-3">
           <% if user_signed_in? %>
             <ul class="nav col-lg-auto my-2">
@@ -67,9 +75,9 @@
           <%= link_to new_admin_session_path do%><!--これいらない-->
             <div class="button mr-2 ml-2">管理者ログイン</div>
           <% end %>
-          <%#= link_to new_customer_session_path do%>
-            <div class="button mr-2 ml-2">ゲストログイン</div>
-          <%# end %>
+          <%= link_to users_guest_sign_in_path, method: :post do %>
+            <div class="button mr-2 ml-2">ゲストログイン閲覧用</div>
+          <% end %>
         <% end %>
       </div>
       <div class="main-border"></div>

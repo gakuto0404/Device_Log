@@ -1,5 +1,6 @@
 class Public::ReviewsController < ApplicationController
   before_action :authenticate_user!
+  before_action :guest_review_user, only: %i[new create]
 
   def index
     @genres = Genre.all
@@ -15,9 +16,9 @@ class Public::ReviewsController < ApplicationController
   def create
     @review = current_user.reviews.new(review_params)
     if @review.save
-      redirect_to public_review_path(@review.id)
+      redirect_to public_review_path(@review.id), notice: 'レビューの投稿できました。'
     else
-      redirect_to new_public_reviews_path
+      redirect_to new_public_reviews_path, alert: 'レビューの投稿ができませんでした。'
     end
   end
 
@@ -34,16 +35,16 @@ class Public::ReviewsController < ApplicationController
   def update
      @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to public_review_path(@review.id)
+      redirect_to public_review_path(@review.id), notice: 'レビューの編集できました。'
     else
-      render :edit
+      render :edit , alert: 'レビューの編集ができませんでした。'
     end
   end
 
   def destroy
     @review = current_user.reviews.find(params[:id])
     @review.destroy
-    redirect_to public_user_path(current_user.id)
+    redirect_to public_user_path(current_user.id), notice: 'レビューの削除ができました。'
   end
 
   private
@@ -53,5 +54,11 @@ class Public::ReviewsController < ApplicationController
 
   def review_search_params
     params.fetch(:search, {}).permit(:item_name, {:genre_ids => []})
+  end
+
+  def guest_review_user
+    if current_user.email == 'guest@example.com'
+      redirect_to root_path, alert: 'ゲストユーザーのレビューはできません。'
+    end
   end
 end

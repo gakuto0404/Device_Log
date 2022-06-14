@@ -26,7 +26,7 @@ class Public::SessionsController < Devise::SessionsController
     if @user
       #入力されたパスワードが正しいこと      ＠userのactive_for_authentication?メソッドがtrueであるかどうか
       if @user.valid_password?(params[:user][:password]) && (@user.is_active == true)
-        redirect_to new_user_registration
+        redirect_to new_user_registration, alert: '退会済みのアカウントです。'
       end
     end
   end
