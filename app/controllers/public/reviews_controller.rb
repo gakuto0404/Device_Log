@@ -48,6 +48,7 @@ class Public::ReviewsController < ApplicationController
   end
 
   private
+  
   def review_params
     params.require(:review).permit(:image, :title, :item_name, :genre_id, :manufacture_name, :impressions, :purchase_price, :purchase_source)
   end

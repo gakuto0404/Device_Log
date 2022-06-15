@@ -14,7 +14,7 @@ class Public::ReviewsCommentController < ApplicationController
 
   def destroy
     ReviewComment.find(params[:id]).destroy
-    redirect_to public_review_path(params[:review_id])
+    redirect_to public_review_path(params[:review_id]), notice: 'レビューのコメントを削除しました。'
   end
 
   private
@@ -25,7 +25,7 @@ class Public::ReviewsCommentController < ApplicationController
 
   def guest_review_comment_user
     if current_user.email == 'guest@example.com'
-      redirect_to root_path, alert: 'ゲストユーザーでコメントはできません。'
+      redirect_to root_path, alert: 'ゲストユーザーでコメントはできません。' #そのレビューページに戻りたい
     end
   end
 end

@@ -235,18 +235,23 @@ main {
 
 /**********************************************************/
 
-.reload {
-  font-size:1.5em;
+.reload {  /* リロードボタン */
+  font-size: 1.5em;
   color: #00fa9a;
   padding-top: 11px;
   padding-right: 10px;
 }
 
-
-.alert-notice { /* 緑 */
-
+.alert-notice { /* 青 */
+  border-radius: 5%;
+  border: 2px solid #696969;
+  background-color: #d1ecf1;
+  color: #0c5460;
 }
 
 .alert-alert { /* 赤 */
-
+  border-radius: 5%;
+  border: 2px solid #696969;
+  background-color: #f8d7da;
+  color: #721c24;
 }
