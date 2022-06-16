@@ -24,7 +24,7 @@
 
 ## 設計書
 - [画面遷移図Admin] https://drive.google.com/file/d/132XYHf3CRPjkAmWxvKuWe24y8hHbG3bA/view?usp=sharing
-- [画面遷移図user] https://drive.google.com/file/d/1m4bK7yZzdYlIQqSy0s86OflL9ArE6azZ/view?usp=sharing
+- [画面遷移図user] https://drive.google.com/file/d/1Z-7fWiVR-Z8uGCtn2XkreWoHUg4iqy4u/view?usp=sharing
 - [テーブル定義書] https://docs.google.com/spreadsheets/d/1EetX7EH9PpXZrBfD05eReKUf2bRK9zGuN0eh-pC5RBQ/edit?usp=sharing
 - [Uiflows Admin] https://drive.google.com/file/d/132XYHf3CRPjkAmWxvKuWe24y8hHbG3bA/view?usp=sharing
 - [Uiflows user] https://drive.google.com/file/d/1Z-7fWiVR-Z8uGCtn2XkreWoHUg4iqy4u/view?usp=sharing
