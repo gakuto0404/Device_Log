@@ -8,7 +8,7 @@ class Public::ReviewsCommentController < ApplicationController
     if review_comments.save
       redirect_to public_review_path(review), notice: 'レビューへのコメントができました。'
     else
-      render public_review_path(@review.id), alert: 'レビューへコメントができませんでした。'
+      redirect_to public_review_path(review), alert: 'レビューへコメントができませんでした。'#renderに変えたい
     end
   end
 
@@ -25,7 +25,7 @@ class Public::ReviewsCommentController < ApplicationController
 
   def guest_review_comment_user
     if current_user.email == 'guest@example.com'
-      redirect_to root_path, alert: 'ゲストユーザーでコメントはできません。' #そのレビューページに戻りたい
+      redirect_to public_review_path(review), alert: 'ゲストユーザーでコメントはできません。'
     end
   end
 end

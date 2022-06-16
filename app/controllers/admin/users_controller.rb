@@ -13,9 +13,9 @@ class Admin::UsersController < ApplicationController
   def update
      @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to admin_user_path
+      redirect_to admin_user_path, notice: 'ユーザー情報を編集しました。'
     else
-      render :edit
+      render :edit, alert: 'ユーザー情報を編集できませんでした。' #形が崩れてしまう
     end
   end
 

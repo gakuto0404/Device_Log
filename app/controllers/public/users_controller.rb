@@ -16,7 +16,7 @@ class Public::UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to public_user_path, notice: 'ユーザー情報を編集しました。'
     else
-      render :edit, alert: 'ユーザー情報を編集できませんでした。'
+      render :edit, alert: 'ユーザー情報を編集できませんでした。' #形が崩れてしまう
     end
   end
 

@@ -95,8 +95,9 @@
       </div>
     <% end %>
     <div class="text-center">
+      <p>相手のことを考え丁寧なコメントを心がけましょう。</br>不快な言葉遣いなどは退会処分となることがあります。</p>
       <%= form_with model:[@review, @review_comment], url: public_review_reviews_comment_index_path(@review.id) do |f| %>
-        <%= f.text_area :comment, :size=>"60x3",placeholder: "コメントする" %>
+        <%= f.text_area :comment, :size=>"60x3",placeholder: "コメントする:2文字以上300文字以内" %>
         <%= f.submit "送信する", class: "button mb-4" %>
       <% end %>
     </div>

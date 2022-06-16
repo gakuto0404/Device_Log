@@ -178,7 +178,7 @@ main {
 
 .top-image {
   border: 2px solid #00fa9a;
-  width:275px;
+  width: 275px;
   height: 275px;
   object-fit: cover;
 }

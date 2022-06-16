@@ -20,15 +20,15 @@ class Admin::ReviewsController < ApplicationController
   def update
      @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to admin_review_path(@review.id)
+      redirect_to admin_review_path(@review.id), notice: 'レビューの編集できました。'
     else
-      render :edit
+      render :edit, alert: 'レビューの編集ができませんでした。'
     end
   end
 
   def destroy
     Review.find(params[:id]).destroy
-    redirect_to admin_reviews_path
+    redirect_to admin_reviews_path, notice: 'レビューの削除ができました。'
   end
 
   private

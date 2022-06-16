@@ -2,6 +2,7 @@
   <div class="profile mt-4">
     <%= image_tag @user.get_profile_image(600,600), class: "user_image" %>
     <h4 class="my-3">
+      ユーザーID:<%= @user.id %>
       ニックネーム：<%= @user.nick_name %></br>
       氏名：<%= @user.last_name %><%= @user.first_name %></br>
       メールアドレス：</br><%= @user.email %></br>

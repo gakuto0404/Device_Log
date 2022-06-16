@@ -5,6 +5,14 @@ class Review < ApplicationRecord
   belongs_to :genre
   has_many :review_comments, dependent: :destroy
 
+  validates :image, presence: true
+  validates :title, presence: true, length: { minimum: 2, maximum: 40 }
+  validates :item_name, presence: true, length: { minimum: 2, maximum: 40 }
+  validates :manufacture_name, presence: true, length: { minimum: 2, maximum: 40 }
+  validates :impressions, presence: true, length: { minimum: 2, maximum: 400 }
+  validates :purchase_price, presence: true
+  validates :purchase_source, presence: true, length: { minimum: 2, maximum: 20 }
+
   scope :search, -> (search_params) do
     return if search_params.blank?
 

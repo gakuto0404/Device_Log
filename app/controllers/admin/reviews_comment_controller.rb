@@ -2,7 +2,7 @@ class Admin::ReviewsCommentController < ApplicationController
 
   def destroy
     ReviewComment.find(params[:id]).destroy
-    redirect_to admin_review_path(params[:review_id])
+    redirect_to admin_review_path(params[:review_id]), notice: 'レビューのコメントを削除しました。'
   end
 
   private

@@ -16,13 +16,13 @@
         <!--レビュー題名-->
         <div class="form-group row">
           <%= f.label :title, "レビュー題名:", class: "col-md-3 col-form-label" %>
-          <%= f.text_field :title, :placeholder => "レビュー題名", class: "col-md-6 mt-1" %>
+          <%= f.text_field :title, :placeholder => "レビュー題名:2文字以上40文字以下", class: "col-md-6 mt-1" %>
         </div>
 
         <!--商品名-->
         <div class="form-group row">
           <%= f.label :item_name, "商品名:", class: "col-md-3 col-form-label" %>
-          <%= f.text_field :item_name, :placeholder => "商品名", class: "col-md-6 mt-1" %>
+          <%= f.text_field :item_name, :placeholder => "商品名:2文字以上40文字以下", class: "col-md-6 mt-1" %>
         </div>
 
         <!--ジャンル-->
@@ -34,7 +34,7 @@
         <!--メーカー名-->
         <div class="form-group row">
           <%= f.label :manufacture_name, "メーカー名:", class: "col-md-3 col-form-label" %>
-          <%= f.text_field :manufacture_name, :placeholder => "メーカー名", class: "col-md-6 mt-1" %>
+          <%= f.text_field :manufacture_name, :placeholder => "メーカー名:2文字以上40文字以下", class: "col-md-6 mt-1" %>
         </div>
 
         <!--購入価格-->
@@ -46,13 +46,13 @@
         <!--購入場所-->
         <div class="form-group row">
           <%= f.label :purchase_source, "購入場所:", class: "col-md-3 col-form-label" %>
-          <%= f.text_field :purchase_source, :placeholder => "購入場所", class: "col-md-6 mt-1" %>
+          <%= f.text_field :purchase_source, :placeholder => "購入場所:2文字以上20文字以下", class: "col-md-6 mt-1" %>
         </div>
 
         <!--レビュー文-->
         <div class="form-group row">
           <%= f.label :impressions, "レビュー文:", class: "col-md-3 col-form-label" %>
-          <%= f.text_area :impressions, :placeholder => "ここにレビュー文を記述します", size: "20x7", class: "col-md-9 mt-1" %>
+          <%= f.text_area :impressions, :placeholder => "ここにレビュー文を記述します:2文字以上400文字以下", size: "20x7", class: "col-md-9 mt-1" %>
         </div>
 
         <!--新規登録ボタン-->
