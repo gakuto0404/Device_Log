@@ -72,9 +72,6 @@
           <%= link_to new_user_session_path do%>
             <div class="button mr-2 ml-2">ログイン</div>
           <% end %>
-          <%= link_to new_admin_session_path do%><!--これいらない-->
-            <div class="button mr-2 ml-2">管理者ログイン</div>
-          <% end %>
           <%= link_to users_guest_sign_in_path, method: :post do %>
             <div class="button mr-2 ml-2">ゲストログイン閲覧用</div>
           <% end %>
@@ -87,7 +84,11 @@
     </main>
   </body>
   <footer>
-    <div class="footer">©gakuto</div>
+    <div class="footer">©gakuto</br>
+      <%= link_to new_admin_session_path do%>
+        <div class="button"></div>
+      <% end %>
+    </div>
   </footer>
 </html>
 
