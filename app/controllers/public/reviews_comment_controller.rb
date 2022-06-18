@@ -24,6 +24,7 @@ class Public::ReviewsCommentController < ApplicationController
   end
 
   def guest_review_comment_user
+    review = Review.find(params[:review_id])
     if current_user.email == 'guest@example.com'
       redirect_to public_review_path(review), alert: 'ゲストユーザーでコメントはできません。'
     end
