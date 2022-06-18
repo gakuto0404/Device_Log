@@ -1,28 +1,6 @@
 <div class="search-form">
-  <%= form_with(scope: :search, url: public_reviews_path, method: :get, local: true) do |f| %>
-    <div class="comment mt-3">
-      <h4 class="d-flex">ジャンル検索
-        <%= link_to public_reviews_path do %>
-          <div class="fa-solid fa-rotate-right", style="color:#00fa9a;"></div>
-        <% end %>
-      </h4>
-      <div class="text-center">
-        <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name, selected: @search_params[:genre_id], include_blank: t('helpers.select.include_blank')) %>
-        <%= f.submit "検索", class: "button col-md-1" %>
-      </div>
-    </div>
-  <% end %>
-  <%= form_with(scope: :search, url: public_reviews_path, method: :get, local: true) do |f| %>
-    <div class="search limegreen">
-      <%= link_to public_reviews_path do %>
-        <div class="fa-solid fa-rotate-right reload"></div>
-      <% end %>
-      <%= f.text_field :item_name, value: @search_params[:item_name], :placeholder => "  デバイス検索" %>
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </div>
-  <% end %>
+  <%= render 'public/search', search_params: @search_params %>
 </div>
-
 <div style="text-align:center;">
   <%= image_tag 'マウス.jpg', class: "top-image"%>
   <%= image_tag 'マイク.jpg', class: "top-image"%>

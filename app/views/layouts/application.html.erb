@@ -16,8 +16,14 @@
     <header class="sticky-top">
       <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white">
         <h5 class="my-0 mr-md-auto font-italic">
-          <%= link_to root_path do %>
-            <%= image_tag 'logo.png', class: "initialized"%>
+          <% if admin_signed_in? %>
+            <%= link_to admin_homes_top_path do %>
+              <%= image_tag 'logo.png', class: "initialized"%>
+            <% end %>
+          <% else %>
+            <%= link_to root_path do %>
+              <%= image_tag 'logo.png', class: "initialized"%>
+            <% end %>
           <% end %>
         </h5>
         <div><!----------------フラッシュメッセージ----------------->
