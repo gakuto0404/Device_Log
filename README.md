@@ -28,6 +28,7 @@
 - [テーブル定義書] https://docs.google.com/spreadsheets/d/1EetX7EH9PpXZrBfD05eReKUf2bRK9zGuN0eh-pC5RBQ/edit?usp=sharing
 - [詳細設計書] https://docs.google.com/spreadsheets/d/1qJBTG_RyYyp0F17BW5UPbkW2teGlocO7e1_8wYOIdEY/edit?usp=sharing
 - [ER図] https://drive.google.com/file/d/1EPP97QrWhTVWMlE5KfjMoTYIK1M9Hxjk/view?usp=sharing
+- [テスト仕様書] https://docs.google.com/spreadsheets/d/1DvOQX8TzZuT_CfVCKgrsMZYBYq4OTYiG/edit?usp=sharing&ouid=103880638812926027297&rtpof=true&sd=true
 
 ## 開発環境
 - OS：Linux(CentOS)
