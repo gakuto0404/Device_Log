@@ -4,9 +4,8 @@ class Public::ReviewsController < ApplicationController
 
   def index
     @genres = Genre.all
-    #@reviews = Review.all
     @search_params = review_search_params
-    @reviews = Review.search(@search_params).includes(:genre)
+    @reviews = Review.search(@search_params).includes(:genre).page(params[:page]).per(1)
   end
 
   def new
