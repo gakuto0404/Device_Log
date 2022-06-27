@@ -18,7 +18,32 @@
   display: contents;
 }
 
+a { /*test*/
+  color: red;
+}
 
+.pagination span{
+  transition: .2s;
+  padding: 7px 14px;
+  margin: 5px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  background-color: #1a1a1a;
+  color: #00fa9a;
+  }
+  @media only screen and (max-width: 767px){
+  .pagination a, .pagination span{
+  padding: 8px 14px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  }
+}
+
+.pagination :hover {
+  background-color: #00fa9a
+}
 
 body {
   margin: 0;
