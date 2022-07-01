@@ -6,12 +6,29 @@ class Review < ApplicationRecord
   has_many :review_comments, dependent: :destroy
 
   validates :image, presence: true
-  validates :title, presence: true, length: { minimum: 2, maximum: 40 }
-  validates :item_name, presence: true, length: { minimum: 2, maximum: 40 }
-  validates :manufacture_name, presence: true, length: { minimum: 2, maximum: 40 }
-  validates :impressions, presence: true, length: { minimum: 2, maximum: 400 }
+
+  validates :title,
+    presence: true,
+    length: { minimum: 2, maximum: 40, allow_blank: true }
+
+  validates :item_name,
+    presence: true,
+    length: { minimum: 2, maximum: 40, allow_blank: true }
+
+  validates :manufacture_name,
+    presence: true,
+    length: { minimum: 2, maximum: 40, allow_blank: true }
+
+  validates :impressions,
+    presence: true,
+    length: { minimum: 2, maximum: 400, allow_blank: true }
+
   validates :purchase_price, presence: true
-  validates :purchase_source, presence: true, length: { minimum: 2, maximum: 20 }
+
+  validates :purchase_source,
+    presence: true,
+    length: { minimum: 2, maximum: 20, allow_blank: true }
+
 
   scope :search, -> (search_params) do
     return if search_params.blank?

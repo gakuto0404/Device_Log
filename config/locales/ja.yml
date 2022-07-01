@@ -6,3 +6,65 @@ ja:
       previous: <i class="fas fa-angle-left"></i>
       next: <i class="fas fa-angle-right"></i>
       truncate: "..."
+  errors:
+    messages:
+      not_found: 'は見つかりませんでした。'
+      not_locked: 'は凍結されていません。'
+      not_saved:
+        one: "エラーが発生したため %{resource} は保存されませんでした:"
+        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした:"
+      taken: "は既に使用されています。"
+      blank: "が入力されていません。"
+      too_short: "は%{count}文字以上に設定して下さい。"
+      too_long: "は%{count}文字以下に設定して下さい。"
+      invalid: "は有効でありません。"
+      confirmation: "が内容とあっていません。"
+  activerecord:
+    models:
+    attributes:
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        nick_name: 'ニックネーム'
+        last_name: '名字'
+        first_name: '名前'
+        encrypted_password: '確認用パスワード'
+        password_confirmation: 'パスワードと'
+      review:
+        image: "画像"
+        title: "レビュー題名"
+        item_name: "商品名"
+        manufacture_name: "メーカー名"
+        impressions: "レビュー文"
+        purchase_price: "購入価格"
+        purchase_source: "購入場所"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: 'を入力してください'
+              taken: 'は既に使用されています'
+            password:
+              blank: 'を入力してください'
+              too_short: 'は6文字以上で設定してください'
+            nick_name:
+              blank: 'を入力してください'
+            last_name:
+              blank: 'を入力してください'
+            first_name:
+              blank: 'を入力してください'
+            encrypted_password:
+              blank: 'を入力してください'
+            password_confirmation:
+              confirmation: '確認用パスワードが一致しません'
+  devise:
+    failure:
+      inactive: '退会済のアカウントです。ログインできません。'
+      invalid: "%{authentication_keys} もしくはパスワードが不正です。"
+      not_found_in_database: "%{authentication_keys} もしくはパスワードが不正です。"
+    sessions:
+      signed_in: 'ログインしました。'
+      signed_out: 'ログアウトしました。'
+    registrations:
+      signed_up: 'アカウント登録が完了しました。'

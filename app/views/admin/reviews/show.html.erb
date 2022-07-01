@@ -46,6 +46,7 @@
     <div class="form-group row">
       <h4><label><strong>レビュー:</strong></label></h4>
       <td><%= @review.impressions %></td>
+      <div class="mt-2"><strong>レビュー日:<%= @review.created_at.strftime('%m/%d %H:%M') %></strong></div>
     </div>
 
     <div class="text-center mb-3">

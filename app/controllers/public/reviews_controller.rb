@@ -17,7 +17,7 @@ class Public::ReviewsController < ApplicationController
     if @review.save
       redirect_to public_review_path(@review.id), notice: 'レビューの投稿できました。'
     else
-      redirect_to new_public_reviews_path, alert: 'レビューの投稿ができませんでした。'#renderに変えたい
+      render :new, alert: 'レビューの投稿ができませんでした。'#renderに変えたい
     end
   end
 
@@ -29,6 +29,9 @@ class Public::ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    if @review.user != current_user
+      redirect_to public_review_path(@review.id), notice: 'このレビューは編集できません。'
+    end
   end
 
   def update
