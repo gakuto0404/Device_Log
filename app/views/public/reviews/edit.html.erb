@@ -5,6 +5,7 @@
       <div id="new-image"></div>
     </div>
     <div class='col-md-8 mt-3'>
+      <%= render 'public/review_error', review: @review %>
       <%= form_with model: @review, url: public_review_path(@review) do |f| %>
 
         <!--商品画像-->
