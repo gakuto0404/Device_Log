@@ -63,6 +63,8 @@ ja:
       inactive: '退会済のアカウントです。ログインできません。'
       invalid: "%{authentication_keys} もしくはパスワードが不正です。"
       not_found_in_database: "%{authentication_keys} もしくはパスワードが不正です。"
+      user:
+        unauthenticated: '未ログインです。ログインを行ってから閲覧ください。'
     sessions:
       signed_in: 'ログインしました。'
       signed_out: 'ログアウトしました。'
