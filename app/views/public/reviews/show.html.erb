@@ -2,7 +2,7 @@
 <div class="row justify-content-center">
   <!--<div class="col-md-2"></div>-->
   <h4>
-    <%= image_tag @review.image, class: "show_item_image my-5" %></br>
+    <%= image_tag @review.image, class: "show_item_image my-5" %><br>
     <%= image_tag @review.user.get_profile_image(400,400), class: "comment_user_image" %>
     <th><strong>レビュー投稿者：</strong></th>
     <th class="text-center"><strong>
@@ -67,7 +67,7 @@
         <div class="d-flex">
           <div class="d-inline-block">
             <%= link_to public_user_path(review_comment.user) do %>
-              <%= image_tag review_comment.user.get_profile_image(400,400), class: "comment_user_image" %></br>
+              <%= image_tag review_comment.user.get_profile_image(400,400), class: "comment_user_image" %><br>
             <% end %>
           </div>
           <div class="col-md-10">
@@ -96,7 +96,7 @@
       </div>
     <% end %>
     <div class="text-center">
-      <p>相手のことを考え丁寧なコメントを心がけましょう。</br>不快な言葉遣いなどは退会処分となることがあります。</p>
+      <p>相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは退会処分となることがあります。</p>
       <%= form_with model:[@review, @review_comment], url: public_review_reviews_comment_index_path(@review.id) do |f| %>
         <%= f.text_area :comment, :size=>"60x3",placeholder: "コメントする:2文字以上300文字以内" %>
         <%= f.submit "送信する", class: "button mb-4" %>
